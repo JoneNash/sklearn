@@ -1,26 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""
-=========================================================
-Linear Regression Example
-=========================================================
-This example uses the only the first feature of the `diabetes` dataset, in
-order to illustrate a two-dimensional plot of this regression technique. The
-straight line can be seen in the plot, showing how linear regression attempts
-to draw a straight line that will best minimize the residual sum of squares
-between the observed responses in the dataset, and the responses predicted by
-the linear approximation.
 
-The coefficients, the residual sum of squares and the variance score are also
-calculated.
-
-"""
 print(__doc__)
-
-
-# Code source: Jaques Grobler
-# License: BSD 3 clause
 
 
 import matplotlib.pyplot as plt
@@ -28,9 +10,15 @@ import numpy as np
 from sklearn import datasets, linear_model
 
 # Load the diabetes dataset
+
 diabetes = datasets.load_diabetes()
+print("---------------")
+# print(diabetes)
 
-
+print("------data------")
+print(diabetes.data)
+print("------taret-----")
+print(diabetes.target)
 # Use only one feature
 diabetes_X = diabetes.data[:, np.newaxis, 2]
 
@@ -46,8 +34,9 @@ diabetes_y_test = diabetes.target[-20:]
 regr = linear_model.LinearRegression()
 
 # Train the model using the training sets
-regr.fit(diabetes_X_train, diabetes_y_train)
 
+regr.fit(diabetes_X_train, diabetes_y_train)
+print(regr.decision_function)
 # The coefficients
 print('Coefficients: \n', regr.coef_)
 # The mean square error
