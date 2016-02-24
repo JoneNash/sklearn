@@ -1,5 +1,7 @@
 #sklearn
-基于scikit-learn，练习机器学习知识;
+--该项目用于学习python及周边，部分代码非原创--
+
+--基于scikit-learn，练习机器学习知识;--
 
 --修改readme.md--
 
